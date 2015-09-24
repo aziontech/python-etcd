@@ -171,7 +171,7 @@ class EtcdError(object):
     def handle(cls, errorCode=None, message=None, cause=None, **kwdargs):
         """ Decodes the error and throws the appropriate error message"""
         try:
-            msg = '{} : {}'.format(message, cause)
+            msg = '{0} : {1}'.format(message, cause)
             payload={'errorCode': errorCode, 'message': message, 'cause': cause}
             if len(kwdargs) > 0:
                 for key in kwdargs:
