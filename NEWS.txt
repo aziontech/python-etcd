@@ -1,6 +1,11 @@
 News
 ====
 
+0.3.4
+-----
+
+* Retry in a bigger number of exceptions
+
 0.3.3
 -----
 *Release date: 12-Apr-2015*
@@ -11,6 +16,8 @@ News
 * Added support for recursive watch
 * Better error handling support (more detailed exceptions)
 * Fixed some unreliable tests
+* Fix bad .format usage for Python 2.6
+* Change package name to python-etcd-azion
 
 
 0.3.2
