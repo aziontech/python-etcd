@@ -8,8 +8,10 @@
 """
 import urllib3
 import json
+import socket
 import ssl
 
+from httplib import HTTPException
 import etcd
 
 
@@ -577,7 +579,9 @@ class Client(object):
                     raise etcd.EtcdException(
                         'HTTP method {} not supported'.format(method))
 
-            except urllib3.exceptions.MaxRetryError:
+            except (urllib3.exceptions.HTTPError,
+                    HTTPException,
+                    socket.error):
                 self._base_uri = self._next_server()
                 some_request_failed = True
 
